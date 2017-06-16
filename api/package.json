@@ -1,0 +1,41 @@
+{
+  "name": "serverless-seed",
+  "version": "1.0.0",
+  "description": "Serverless seed starter project with serverless framework, typescript, jest, prettier",
+  "main": "handler.js",
+  "scripts": {
+    "prestart": "../node_modules/.bin/rimraf .build",
+    "start": "sls offline start",
+    "test": "../node_modules/.bin/jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harshabonthu/serverless-seed.git"
+  },
+  "author": "Harsha.im",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harshabonthu/serverless-seed/issues"
+  },
+  "homepage": "https://github.com/harshabonthuserverless-seed",
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "transform": {
+      ".ts": "ts-jest/preprocessor.js"
+    },
+    "testMatch": [
+      "**/*.test.ts"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "src",
+      "__test__"
+    ]
+  },
+  "dependencies": {
+    "ts-httpexceptions": "^2.2.3"
+  }
+}

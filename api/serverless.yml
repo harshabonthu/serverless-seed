@@ -1,0 +1,23 @@
+service: serverless-seed
+
+plugins:
+  - serverless-offline
+  - serverless-plugin-typescript
+
+custom:
+  stage: ${opt:stage, self:provider.stage}
+  env: ${file(./env/env.${self:custom.stage}.yml)}
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  environment:
+    CLIENT_ID: ${env:CLIENT_ID, self:custom.env.CLIENT_ID}
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: hello
+          method: get
