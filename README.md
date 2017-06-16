@@ -60,20 +60,27 @@ Now browse to the API endpoint at [`localhost:3000/hello`](http://localhost:3000
 ## Directory Structure
 ```
 .
+├── CHANGELOG.md
 ├── README.md
 ├── api
-│   ├── __tests__                   --> Unit tests
+│   ├── __tests__                       --> Unit tests
 │   │   └── hello.test.ts
-│   ├── handler.ts                  --> Main Handler
-│   ├── package.json                --> Include only production Node modules
-│   ├── serverless.yml              --> Serverless framework config
+│   ├── env
+│   │   ├── env.dev.yml                 --> Add Env variables for stage: dev
+│   │   └── env.qa.yml                  --> Add Env variables for stage: qa
+│   ├── handler.ts                      --> Main Handler
+│   ├── package.json                    --> Include only production Node modules
+│   ├── serverless.yml                  --> Serverless framework config
 │   ├── src
-│   │   └── functions               --> All the source files for lambda functions
-│   │       └── hello
-│   │           └── hello.ts
+│   │   └── functions                   --> All the source files for lambda functions
+│   │   │   └── hello
+│   │   │       └── hello.ts
+│   │   └── utils
+│   │       ├── api_gateway_handler.ts  --> Global API handler class
+│   │       └── api_response.ts         --> Global API response class
 │   └── tsconfig.json
-├── package.json                    --> Include only development Node modules
-└── yarn.lock                               
+├── package.json                        --> Include only development Node modules
+└── yarn.lock                             
 ```
 
 Note: We can include/exclude files in `package/include`, seperating the dev and prod node modules will result in lesser package size. See [Exclude/Include](https://serverless.com/framework/docs/providers/aws/guide/packaging#exclude--include), [Keeping Dev Dependencies Out Of Your Serverless Package](http://www.goingserverless.com/blog/keeping-dev-dependencies-out-of-your-serverless-package)
