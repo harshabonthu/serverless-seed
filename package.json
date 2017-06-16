@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "Serverless seed starter project with serverless framework, typescript, jest, prettier",
   "main": "index.js",
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
   "scripts": {
     "precommit": "lint-staged",
     "release": "standard-version --no-verify",
@@ -27,6 +32,7 @@
   "devDependencies": {
     "@types/aws-lambda": "0.0.12",
     "@types/jest": "^19.2.4",
+    "cz-conventional-changelog": "^2.0.0",
     "husky": "^0.13.4",
     "jest": "^20.0.4",
     "lint-staged": "^3.6.1",
