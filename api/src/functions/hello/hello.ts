@@ -8,7 +8,7 @@ import { APIGatewayHandler } from "../../utils/api_gateway_handler";
 import { APIResponse } from "../../utils/api_response";
 import { BadRequest } from "ts-httpexceptions";
 
-export async function hello(
+export function hello(
   event: APIGatewayEvent,
   context: Context,
   callback: ProxyCallback
